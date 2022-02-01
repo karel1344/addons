@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 CONFIG_PATH=/data/options.json
 SHARE_DIR=/share
