@@ -23,6 +23,7 @@ fi
 
 # start server
 echo "[Info] Wallpad Controller stand by... : "$JS_FILE
+echo $0
 
 JS_FILE=/$SHARE_DIR/$JS_FILE
 node $JS_FILE
