@@ -8,19 +8,26 @@ ENV LANG C.UTF-8
 COPY run.sh /
 COPY js /js
 
-WORKDIR /share
+#WORKDIR /share
 
 # Install requirements for add-on
 
-RUN apk add --no-cache jq npm make gcc g++ python3 linux-headers udev
-RUN npm init -f
-RUN npm install mqtt
-#RUN npm install serialport --build-from-source=serialport
-RUN npm install serialport --unsafe-perm --build-from-source=serialport
-
 #RUN apk add --no-cache jq npm make gcc g++ python3 linux-headers udev
+#RUN npm init -f
+#RUN npm install mqtt
+##RUN npm install serialport --build-from-source=serialport
+#RUN npm install serialport --unsafe-perm --build-from-source=serialport
 
-RUN chmod a+x /run.sh
-#RUN npm install
+##RUN apk add --no-cache jq npm make gcc g++ python3 linux-headers udev
 
-CMD [ "/run.sh" ]
+#RUN chmod a+x /run.sh
+##RUN npm install
+
+#CMD [ "/run.sh" ]
+
+
+RUN apk add --no-cache jq npm make gcc g++ python3 linux-headers udev
+
+WORKDIR /
+COPY package.json /
+RUN npm install
